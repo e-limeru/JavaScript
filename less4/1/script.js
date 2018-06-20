@@ -4,10 +4,11 @@ var digit = {}
 var a = prompt('число от 0 до 999');
 
 if (parseInt(a)>999 && parseInt(a)<0) {
-	
-
+	console.log("Ошибка");
+} else {
+	razryad(a);
 }
-
+function razryad (a) {
 a = a.split("");
 
 if (a.length == 3) {
@@ -20,5 +21,6 @@ if (a.length == 3) {
 } else if (a.length == 1) {
 	digit.unit = a[0];
 } else console.log("Ошибка");
+return console.log(digit);
+}
 
-console.log(digit);
