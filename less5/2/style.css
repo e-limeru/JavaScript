@@ -1,0 +1,50 @@
+.insideBoard {
+    border: 1px solid #000;
+    display: flex;
+    width: 436px;
+	height: 436px;
+    flex-wrap: wrap;
+    margin: 100px auto;
+    justify-content: space-around;
+}
+
+#chars, #chars2 {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0 18px;
+    justify-content: space-around;
+}
+
+.num {
+	width: 18px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.item {
+	width: 50px;
+	height: 50px;
+    outline: 1px solid #000;
+}
+
+.black {
+	background: #a7a4a4;
+}
+
+.white {
+	background: #fff;
+}
+
+.whiteChess {
+    color: #ccc;
+    text-align: center;
+    margin-top: 11px;
+}
+
+.blackChess {
+    color: #000;
+    text-align: center;
+    margin-top: 11px;
+}
