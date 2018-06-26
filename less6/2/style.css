@@ -1,0 +1,11 @@
+nav {width: 600px; height: 30px;}
+#up{
+	float: right;
+}
+#down{
+	float: left;
+}
+
+.img_cart {
+	width: 100px;
+}
