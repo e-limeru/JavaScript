@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<input type="button" id="start" name="start" value="Старт">
+<input type="button" id="stop" name="stop" value="Стоп">
+	
+<script>
+// ДЗ
+// Проверку на пустую кофеварку при запуске
+// Реализовать метод "стоп" (остановка кофеварки)
+// Добавить дополнение значения воды
+// * внести значения зерен
+// * создать UI
+
+
+
+function CoffeMachine(power) {
+	var waterAmount = 0;
+	var bearnAmont = 0;
+	var waterCapacity = 4200;
+	var temp = 90;
+	var timerStop;
+
+	this.checkWater = function(addWater=0) {
+		return waterAmount=+addWater;
+	}
+
+	this.checBean = function(newBean) {
+		if (newBean < 10) {
+			console.error('Мало зерен');
+		} else {
+			bearnAmont = newBean;
+		}
+	}
+
+	this.fill = function(newAmount) {
+		if (newAmount >= 50) {
+			waterAmount = newAmount;
+
+		} else {
+			console.error('Слишком мало воды');
+			return false;
+		}
+	}
+
+	this.getBoilTime = function() {
+		return (waterAmount * waterCapacity * temp) / power;
+	}
+
+	this.launch = function() {
+		if (!waterAmount == 0 && !bearnAmont == 0) { //проверка на пустую кофеварку
+			timerStop = setTimeout(function() {
+			console.log('Ваш кофе готов!');
+			}, this.getBoilTime());
+		} else console.error('Налейте воду');
+	}
+
+	this.stop = function(timeStop) { //метод остановки кофемашины
+		setTimeout(function(){
+			clearTimeout(timerStop);
+			console.log('Кофемашина остановлена');
+		}, timeStop);
+	}
+}
+
+var vitek = new CoffeMachine(3000);
+
+vitek.fill(50);
+vitek.checkWater(70); // долив воды
+vitek.checBean(15);
+
+var start = document.getElementById('start');
+start.onclick = vitek.launch();
+
+var stop = document.getElementById('stop');
+stop.onclick = vitek.stop;
+
+
+</script>
+</body>
+</html>
