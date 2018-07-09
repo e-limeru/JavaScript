@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var regTpl = /\s\'/gmi;
+		var regTpl2 = /\'\s/gmi;
+
+		var str = "Текст текст текст текс'т 'Диалог диалог' текст текст текст текст";
+
+		var newStr = str.replace(regTpl, ' "');
+		newStr = newStr.replace(regTpl2, '" ');
+
+		console.log(newStr);
+	</script>
+</body>
+</html>
