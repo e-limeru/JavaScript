@@ -1,0 +1,29 @@
+body {width: 800px;}
+.contentTab {
+  display: none; /* по умолчанию прячем все блоки */
+}
+.contentTab.active {
+  display: block; /* по умолчанию показываем нужный блок */
+}
+
+.tabsList li {
+	list-style: none;
+	display: inline-block;
+	margin: 5px;
+	padding: 5px;
+	border-radius: 8px;
+	background: green;
+	color: #fff;
+}
+
+.tabsList li:hover {
+	cursor: pointer
+}
+
+.contentTab {
+	margin: 5px;
+	padding: 5px;
+	border-radius: 8px;
+	background: green;
+	color: #fff;
+}
