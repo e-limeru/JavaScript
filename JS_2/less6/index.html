@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.8/jquery.jcarousel.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.8.1/parsley.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+
+		<form id="validate-form">
+			<div class="form-group">
+				<label for="exampleInputEmail1">Email адрес</label>
+				<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Введите email" required>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputDate">Дата рождения</label>
+				<input type="email" class="form-control" id="exampleInputDate" aria-describedby="emailHelp" placeholder="Дата рождения" required>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputPassword1">Пароль</label>
+				<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Пароль">
+			</div>
+			<div class="form-group form-check">
+				<input type="checkbox" class="form-check-input" id="exampleCheck1">
+				<label class="form-check-label" for="exampleCheck1">Check me out</label>
+			</div>
+			<button type="submit" class="btn btn-primary">Отправить</button>
+		</form>
+	</div>
+
+
+
+	<div id="wrapper">
+		<div class="d-carousel">
+			<ul class="carousel">
+				<li> <a href="#"><img src="img1.gpg" alt="" /></a>
+					<h4>Товар 1</h4>
+				</li>
+				<li> <a href="#"><img src="img2.jpg" alt="" /></a>
+					<h4>Товар 2</h4>
+				</li>
+				<li> <a href="#"><img src="img3.jpg" alt="" /></a>
+					<h4>Товар 3</h4>
+				</li>
+				<li> <a href="#"><img src="img4.jpg" alt="" /></a>
+					<h4>Товар 4</h4>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+
+	<script>
+		$('#validate-form').parsley({
+			errorClass: 'is-invalid',
+		});
+		$('.is-invalid').toggle( "bounce", { times: 3 }, "slow" );
+
+		$('#exampleInputDate').datepicker({
+			monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+			dayNames: ['Пн' 'Вт' 'Ср' 'Чт' 'Пт' 'Сб' 'Вс']
+		});
+
+		$('.carousel').jcarousel({
+		});
+	</script>
+</body>
+</html>
