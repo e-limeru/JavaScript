@@ -1,0 +1,1 @@
+console.log('plagin js file');
